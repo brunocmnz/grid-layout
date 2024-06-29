@@ -79,6 +79,7 @@ body{
     grid-template-columns: 255px 300px 270px 255px ;
     grid-auto-rows: 100px;
     margin-top: 20vh;
+    
 }
 
 .container > div{
@@ -91,13 +92,17 @@ body{
 
 .usuario{
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .usuario__info{
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    gap: 0.2rem;
+}
+
+.usuario__nome{
+    font-weight: 500;
 }
 
 .verificado{
@@ -111,9 +116,24 @@ body{
 }
 
 .texto{
-    opacity: 0.7;
     font-size: 13px;
     line-height: 18px;
+}
+
+.texto-branco{
+    color: var(--cor-geral);
+}
+
+.texto-cinza{
+    color: var(--cor-clara);
+}
+
+.texto-aspas{
+    color: var(--cor-texto-aspas);
+}
+
+.ofuscado{
+    opacity: 0.7;
 }
 
 .box1 {
@@ -125,10 +145,11 @@ body{
     background-image: url(img/aspas.svg);
     background-size: contain;
     background-repeat: no-repeat;
-    background-size: 20%;
+    background-size: 35%;
     background-position-x: 90%;
 
     background-color: var(--roxo-escuro);
+    order: 1;
 }
 
 .box2 {
@@ -137,18 +158,21 @@ body{
     grid-row-end: 4;
 
     background-color: var(--cor-clara);
+    order: 2;
 }
 
 .box3 {
     grid-column-start: 4;
     grid-row-start: 1;
     grid-row-end: 7;
+    order: 3;
 }
 
 .box4 {
     grid-column-start: 1;
     grid-row-start: 4;
     grid-row-end: 7;
+    order: 4;
 }
 
 .box5 {
@@ -158,9 +182,52 @@ body{
     grid-row-end: 7;
 
     background-color: var(--cor-escura);
+    order: 5;
 }
 
 .box3, .box4{
     color: var(--cor-clara);
     background-color: var(--cor-geral);
+}
+
+@media screen and (max-width: 768px) {
+
+    body{
+        padding: 4rem 0;
+        width: 100vw;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container > div{
+        padding: 1.5rem 2rem 2rem 2rem;
+        width: 95vw;
+    }
+
+    .titulo{
+        font-size: 20px;
+    }
+
+    .usuario__nome{
+        font-size: 13px;
+    }
+
+    .verificado{
+        font-size: 11px;
+    }
+
+    .box3{
+        order: 5;
+    }
+
+    .box4{
+        order: 3;
+    }
+
+    .box5{
+        order: 4;
+    }
 }
